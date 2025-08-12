@@ -1,0 +1,205 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+}
+body {
+  background-color: #daebe3;
+  margin: 0 auto ;
+}
+nav {
+  height: 60px;
+  padding: 0 10px;
+  background-color: #6571658e;
+  box-shadow: 0 0 20px #cfd6c4;
+  display: flex;
+  justify-content: space-between;
+}
+.logo {
+  width: 12%;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+.logo img {
+  height: 2rem;
+   margin: 0 10px ;
+}
+nav ul {
+  width: 40%;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+nav ul li {
+  display: inline;
+}
+nav ul li select {
+  border: none;
+  height: 2rem;
+  background-color: #ffffff69;
+  border-radius: 5px;
+}
+main {
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 20px;
+}
+.cal-body {
+  width: 50vh;
+  height: 75vh;
+  padding: 45px 0 10px 0;
+  background-color: #ffffff;
+  border-radius: 30px;
+  box-shadow: 5px 5px 10px #99cdd8;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+}
+.cal-screen {
+  width: 80%;
+  height: 150px;
+  box-sizing: border-box;
+  padding: 0;
+  background-color: #fff0ea;
+  border-radius: 30px;
+  box-shadow: 5px 5px 15px #c2c5c6;
+  display: flex;
+  align-items: center;
+  justify-content: end;
+  overflow-x: scroll;
+  white-space: nowrap;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(199, 199, 199, 0.505) rgba(255, 255, 255, 0);
+}
+.scroll-screen {
+  display: inline-block;
+  padding-left: 13px; /* <-- This padding will move as you scroll */
+  padding-right: 13px; /* <-- This padding will move as you scroll */
+  overflow-x: auto;
+}
+.scroll-screen p {
+  display: inline-block;
+  opacity: 50%;
+  font-size: 3rem;
+  margin: 0;
+}
+.cal-btns {
+  width: 95%;
+  height: 75%;
+  box-sizing: border-box;
+  padding: 10px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+  gap: 2px;
+  align-items: center;
+  justify-items: center;
+  overflow: hidden;
+}
+.btn {
+  height: max(4vw, 5vh);
+  width: max(4vw, 5vh);
+  border-radius: 50%;
+  border: none;
+  background-color: #fff0ea;
+  box-shadow: 5px 5px 10px #c2c5c6;
+  font-size: max(1.5vw, 2vh);
+}
+.btn:hover {
+  cursor: pointer;
+  height: max(4.3vw, 5.2vh);
+  width: max(4.3vw, 5.2vh);
+}
+.eql {
+  height: max(4vw, 5vh);
+  width: max(9vw, 11vh);
+  border-radius: 50px;
+  border: none;
+  background-color: #99cdd8;
+  box-shadow: 5px 5px 10px #c2c5c6;
+  grid-column: 3/5;
+}
+.eql:hover {
+  cursor: pointer;
+  height: max(4.3vw, 5.2vh);
+  width: max(9.2vw, 11.2vh);
+}
+
+@media((max-width: 1023px) and (min-width:650px)) {
+  .cal-body {
+  width: 65vw;
+  height: 75vh;
+  padding: 45px 0 10px 0;
+  background-color: #ffffff;
+  border-radius: 30px;
+  box-shadow: 5px 5px 10px #99cdd8;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+}
+.cal-btns {
+  width: 95%;
+  height: 75%;
+  box-sizing: border-box;
+  padding: 10px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+  gap: 1px;
+  align-items: center;
+  justify-items: center;
+  overflow: hidden;
+}
+.btn {
+  height: max(10vw, 6vh);
+  width: max(10vw, 6vh);
+  border-radius: 50%;
+  border: none;
+  background-color: #fff0ea;
+  box-shadow: 5px 5px 10px #c2c5c6;
+  font-size: max(2vw, 2.5vh);
+}
+.btn:hover {
+  cursor: pointer;
+  height: max(3.2vw, 5.2vh);
+  width: max(3.2vw, 5.2vh);
+}
+.eql {
+  height: max(10vw, 6vh);
+  width: max(20vw, 12vh);
+  border-radius: 50px;
+  border: none;
+  background-color: #99cdd8;
+  box-shadow: 5px 5px 10px #c2c5c6;
+  grid-column: 3/5;
+}
+.eql:hover {
+  cursor: pointer;
+  height: max(3.2vw, 5.2vh);
+  width: max(8.2vw, 11.2vh);
+}
+}
+@media((max-width: 650px)) {
+  .cal-body {
+  width: 80vw;
+  height: 60vh;
+  /* min-height: 600px; */
+  padding: 45px 0 10px 0;
+  background-color: #ffffff;
+  border-radius: 30px;
+  box-shadow: 5px 5px 10px #99cdd8;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+}
+nav ul {
+  display: none;
+}
+}
