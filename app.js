@@ -5,15 +5,47 @@ let valOp = ["0"];
 let value = "0";
 let ans="";
 let idx = 0;
-
+document.addEventListener("keydown",(event)=>{
+  const keyName=event.key;
+  let str="0123456789"
+  if(keyName==="="||keyName==="Enter"){
+    eql();
+  }
+  else if(keyName==="Backspace"){
+    del();
+  }
+  else if(keyName==="Escape"){
+    clear();
+  }
+  else if(keyName==="+"||keyName==="-"||keyName==="*"||keyName==="/"){
+    if(keyName==="/"){
+      oper("÷");
+    }
+    else if(keyName==="*")
+    {
+      oper("×");
+    }
+    else{
+      oper(keyName);
+    }
+  }
+  else if(keyName==="%"){
+    per("%");
+  }
+  else if(keyName==="."){
+    dot(".");
+  }
+  else if(str.includes(keyName)){
+    num(keyName);
+  }
+})
 //event listener on buttons
 let btns = document.querySelectorAll(".btn");
 for (let btn of btns) {
   btn.addEventListener("click", () => {
     if ("vibrate" in navigator) {
-      navigator.vibrate(30); // Vibrate for 200ms
+      navigator.vibrate(30); // Vibrate for 30ms
     }
-
     let text = btn.innerText;
     //clear button click
     if (text === "clr") {
@@ -111,7 +143,6 @@ function dot(text) {
       return;
     }
     value += ".";
-    console.dir(value);
     screen.innerText = `${screen.innerText + text}`;
   }
 }
@@ -127,11 +158,9 @@ function num(text) {
     return;
   } else if (screen.innerText === "0") {
     value = text;
-    console.dir(value);
     screen.innerText = `${text}`;
   } else {
     value += text;
-    console.dir(value);
     screen.innerText = `${screen.innerText + text}`;
   }
 }
@@ -157,7 +186,6 @@ function del() {
     screen.innerText = screen.innerText.slice(0, end - 1);
     if (valLen - 1 == 0) {
       idx--;
-      console.log(idx);
       value = valOp[idx];
       valOp.pop();
     }
@@ -191,25 +219,17 @@ function eql() {
 async function calculate() {
   let i = idx;
   //% function
-  console.log( "out", valOp[i] );
   while (i >= 0) {
     let x = valOp[i].slice(valOp[i].length - 1, valOp[i].length);
-    console.log( "1st", valOp[i] );
     if (x === "%") {
       let count = 1;
-      console.log( "gg", valOp[i] );
       valOp[i] = valOp[i].slice(0,valOp[i].length - 1);
-      console.log("a" , i);
       x = valOp[i].slice(valOp[i].length - 1, valOp[i].length);
-      console.log("b", valOp[i]);
       while (x === "%") {
         count++;
-        console.log( x );
-        console.log(valOp[i]);
         valOp[i] = valOp[i].slice(0,valOp[i].length - 1);
         x = valOp[i].slice(valOp[i].length - 1, valOp[i].length);
       }
-      console.log(valOp[i]);
       valOp[i]=(String)(valOp[i]/(100**count));
     }
     i = i - 2;
