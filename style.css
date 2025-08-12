@@ -65,7 +65,7 @@ main {
   height: 150px;
   box-sizing: border-box;
   padding: 0;
-  background-color: #fff0ea;
+  background-color: #ffffff;
   border-radius: 30px;
   box-shadow: 5px 5px 15px #c2c5c6;
   display: flex;
@@ -106,7 +106,7 @@ main {
   width: max(4vw, 5vh);
   border-radius: 50%;
   border: none;
-  background-color: #fff0ea;
+  background-color: #ffffff;
   box-shadow: 5px 5px 10px #c2c5c6;
   font-size: max(1.5vw, 2vh);
 }
@@ -161,7 +161,7 @@ main {
   width: max(10vw, 6vh);
   border-radius: 50%;
   border: none;
-  background-color: #fff0ea;
+  background-color: #ffffff;
   box-shadow: 5px 5px 10px #c2c5c6;
   font-size: max(2vw, 2.5vh);
 }
