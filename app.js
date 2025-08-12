@@ -11,7 +11,7 @@ let btns = document.querySelectorAll(".btn");
 for (let btn of btns) {
   btn.addEventListener("click", () => {
     if ("vibrate" in navigator) {
-      navigator.vibrate(100); // Vibrate for 200ms
+      navigator.vibrate(30); // Vibrate for 200ms
     }
 
     let text = btn.innerText;
