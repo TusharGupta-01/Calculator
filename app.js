@@ -10,6 +10,10 @@ let idx = 0;
 let btns = document.querySelectorAll(".btn");
 for (let btn of btns) {
   btn.addEventListener("click", () => {
+    if ("vibrate" in navigator) {
+      navigator.vibrate(200); // Vibrate for 200ms
+    }
+    
     let text = btn.innerText;
     //clear button click
     if (text === "clr") {
